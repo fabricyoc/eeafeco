@@ -1,0 +1,185 @@
+/* Reset e fontes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --cor-menu: #71c575;
+}
+
+body {
+  line-height: 1.6;
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: var(--cor-menu);
+  color: #fff;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 150px;
+}
+
+/* Botão menu hambúrguer */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1001;
+  /* acima do nav */
+}
+
+/* Nav */
+nav {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 1.1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #c8e6c9;
+}
+
+/* Container e seções */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+section {
+  padding: 2rem 1.5rem;
+  background: #fff;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  text-align: justify;
+  scroll-margin-top: 200px;
+  /* corrige sobreposição do header */
+}
+
+section:hover {
+  transform: scale(1.01);
+}
+
+h2 {
+  color: #2e7d32;
+  margin-bottom: 1rem;
+  border-left: 6px solid #2e7d32;
+  padding-left: 10px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+}
+
+.card {
+  background: #e8f5e9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.card:hover {
+  background: #c8e6c9;
+  transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+  background: var(--cor-menu);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* Botão voltar ao topo */
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s;
+}
+
+#topBtn:hover {
+  background: #1b5e20;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #2e7d32;
+    position: absolute;
+    top: 100%;
+    /* abaixo do header */
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 0 0 0 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  header {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 1.5rem 1rem;
+  }
+}
